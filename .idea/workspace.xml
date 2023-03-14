@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e51d2b7c-655c-408b-83a8-60da8b00a9ae" name="Changes" comment="Accuracy check, Testing correctness">
+    <list default="true" id="e51d2b7c-655c-408b-83a8-60da8b00a9ae" name="Changes" comment="knn wyciągnięte z maina">
+      <change afterPath="$PROJECT_DIR$/resources/breast-cancer-wisconsin.data" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
     </list>
@@ -39,6 +40,11 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\NAI\KNN\resources" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main" />
@@ -64,7 +70,7 @@
       <workItem from="1678736447554" duration="5280000" />
       <workItem from="1678795167591" duration="106000" />
       <workItem from="1678804246027" duration="603000" />
-      <workItem from="1678824101687" duration="7911000" />
+      <workItem from="1678824101687" duration="10053000" />
     </task>
     <task id="LOCAL-00001" summary="Read, getDist">
       <created>1678741224685</created>
@@ -94,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678830577597</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="knn wyciągnięte z maina">
+      <created>1678833259726</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1678833259726</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +128,7 @@
     <MESSAGE value="Read, getDist" />
     <MESSAGE value="add test and train files with task description" />
     <MESSAGE value="Accuracy check, Testing correctness" />
-    <option name="LAST_COMMIT_MESSAGE" value="Accuracy check, Testing correctness" />
+    <MESSAGE value="knn wyciągnięte z maina" />
+    <option name="LAST_COMMIT_MESSAGE" value="knn wyciągnięte z maina" />
   </component>
 </project>
