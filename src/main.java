@@ -1,9 +1,9 @@
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 import java.util.List;
 
 public class main {
@@ -17,8 +17,11 @@ public class main {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("K: \t");
         int k = Integer.parseInt(bf.readLine());
+
         System.out.println("Nazwa modelu (iris/wdbc) domyslnie jest iris");
         String modelName = bf.readLine();
+
+
         if (modelName.equals("wdbc") || modelName.equals("WDBC")){
             System.out.println("Wybrano model wdbc");
             punktsTraining =getListePunktow("D:\\NAI\\KNN\\resources\\wdbc.data");
@@ -36,6 +39,56 @@ public class main {
         System.out.println(punktsTesting.get(5));
         System.out.println(punktsTraining.get(10));
         System.out.println(distAB(punktsTesting.get(5), punktsTraining.get(10)));
+
+        int poprawnie = 0;
+        String result = "";
+
+        for (Punkt test : punktsTesting) {
+
+            List<ObliczanieOdleglosci> odlegloscis = new ArrayList<>();
+
+            for (Punkt trening : punktsTraining)
+                odlegloscis.add(new ObliczanieOdleglosci(test, trening, distAB(test, trening)));
+
+            Collections.sort(odlegloscis);
+
+            int dobrze = 0;
+            List<String> stringList = new ArrayList<>();
+            Set<String> stringSet = new HashSet<>();
+
+            for (int i = 0; i < k; i++) {
+                stringList.add(odlegloscis.get(i).getTrainModel().getGatunek());
+                stringSet.add(odlegloscis.get(i).getTrainModel().getGatunek());
+
+                if (odlegloscis.get(i).getTrainModel().getGatunek().equals(test.getGatunek()))
+                    dobrze++;
+
+            }
+
+            int max = 0;
+
+            for (String sss:
+                 stringSet) {
+                if (Collections.frequency(stringList,sss)>max) {
+                    max = Collections.frequency(stringList, sss);
+                    result = sss;
+                }
+            }
+
+            if (result.equals(test.getGatunek())){
+                poprawnie++;
+            }
+
+
+            System.out.print("    K = " + k);
+            System.out.println("    K-NN " + result);
+
+        }
+        System.out.print("poprawnie: " + poprawnie);
+        System.out.println(" z " + punktsTesting.size());
+        double a = poprawnie;
+        double b = punktsTesting.size();
+        System.out.println((a/b)*100 + "%");
 
     }
 
