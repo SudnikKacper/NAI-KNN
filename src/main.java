@@ -34,61 +34,8 @@ public class main {
         }
 
 
-//        System.out.println(punktsTraining);
-//        System.out.println(punktsTesting);
-        System.out.println(punktsTesting.get(5));
-        System.out.println(punktsTraining.get(10));
-        System.out.println(distAB(punktsTesting.get(5), punktsTraining.get(10)));
 
-        int poprawnie = 0;
-        String result = "";
-
-        for (Punkt test : punktsTesting) {
-
-            List<ObliczanieOdleglosci> odlegloscis = new ArrayList<>();
-
-            for (Punkt trening : punktsTraining)
-                odlegloscis.add(new ObliczanieOdleglosci(test, trening, distAB(test, trening)));
-
-            Collections.sort(odlegloscis);
-
-            int dobrze = 0;
-            List<String> stringList = new ArrayList<>();
-            Set<String> stringSet = new HashSet<>();
-
-            for (int i = 0; i < k; i++) {
-                stringList.add(odlegloscis.get(i).getTrainModel().getGatunek());
-                stringSet.add(odlegloscis.get(i).getTrainModel().getGatunek());
-
-                if (odlegloscis.get(i).getTrainModel().getGatunek().equals(test.getGatunek()))
-                    dobrze++;
-
-            }
-
-            int max = 0;
-
-            for (String sss:
-                 stringSet) {
-                if (Collections.frequency(stringList,sss)>max) {
-                    max = Collections.frequency(stringList, sss);
-                    result = sss;
-                }
-            }
-
-            if (result.equals(test.getGatunek())){
-                poprawnie++;
-            }
-
-
-            System.out.print("    K = " + k);
-            System.out.println("    K-NN " + result);
-
-        }
-        System.out.print("poprawnie: " + poprawnie);
-        System.out.println(" z " + punktsTesting.size());
-        double a = poprawnie;
-        double b = punktsTesting.size();
-        System.out.println((a/b)*100 + "%");
+        doKNN(punktsTesting, punktsTraining, k, false);
 
     }
 
@@ -129,4 +76,60 @@ public class main {
         }
         return dist;
     }
+
+
+    public static void doKNN(List<Punkt> listaTestowa, List<Punkt> listaTreningowa, int k, boolean pokazWszystko){
+
+
+        int poprawnie = 0;
+        String rozwiazanie = "";
+
+
+        for (Punkt pTest :
+                listaTestowa) {
+
+            List<ObliczanieOdleglosci> odlegloscis = new ArrayList<>();
+
+            for (Punkt pTren : listaTreningowa)
+                odlegloscis.add(new ObliczanieOdleglosci(pTest, pTren, distAB(pTest, pTren)));
+
+            Collections.sort(odlegloscis);
+//
+            List<String> listaNazwyGatunkowTreningowych = new ArrayList<>();
+            Set<String> setNazwGatunkowTreningowych = new HashSet<>();
+
+            for (int i = 0; i < k; i++) {
+                listaNazwyGatunkowTreningowych.add(odlegloscis.get(i).getTrainModel().getGatunek());
+                setNazwGatunkowTreningowych.add(odlegloscis.get(i).getTrainModel().getGatunek());
+            }
+
+            int wystapienia = 0;
+            for (String gatunek :
+                    setNazwGatunkowTreningowych) {
+                if (Collections.frequency(listaNazwyGatunkowTreningowych,gatunek)>wystapienia){
+                    wystapienia = Collections.frequency(listaNazwyGatunkowTreningowych,gatunek);
+                    rozwiazanie = gatunek;
+                }
+            }
+
+
+            if (rozwiazanie.equals(pTest.getGatunek()))
+                poprawnie++;
+
+
+            if (pokazWszystko){
+                System.out.println("K = " + k + ", KNN result = " + rozwiazanie);
+            }
+
+        }
+
+        double a = poprawnie;
+        double b = listaTestowa.size();
+        double procent = a/b*100;
+        System.out.println("Poprawnie " + poprawnie + "/" + listaTestowa.size() + ",    poprawnosc: " + procent + "%");
+
+
+
+    }
+
 }
