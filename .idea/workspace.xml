@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e51d2b7c-655c-408b-83a8-60da8b00a9ae" name="Changes" comment="Interfejs z wyborem, obsluga 1 punktu" />
+    <list default="true" id="e51d2b7c-655c-408b-83a8-60da8b00a9ae" name="Changes" comment="1.0">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +19,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -66,7 +70,10 @@
       <workItem from="1678736447554" duration="5280000" />
       <workItem from="1678795167591" duration="106000" />
       <workItem from="1678804246027" duration="603000" />
-      <workItem from="1678824101687" duration="10369000" />
+      <workItem from="1678824101687" duration="10546000" />
+      <workItem from="1679057297604" duration="1206000" />
+      <workItem from="1679091980462" duration="48000" />
+      <workItem from="1679227540237" duration="8352000" />
     </task>
     <task id="LOCAL-00001" summary="Read, getDist">
       <created>1678741224685</created>
@@ -117,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678835487868</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="1.0">
+      <created>1678835559381</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678835559381</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,7 +142,24 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -140,6 +171,7 @@
     <MESSAGE value="Accuracy check, Testing correctness" />
     <MESSAGE value="knn wyciągnięte z maina" />
     <MESSAGE value="Interfejs z wyborem, obsluga 1 punktu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Interfejs z wyborem, obsluga 1 punktu" />
+    <MESSAGE value="1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.0" />
   </component>
 </project>
